@@ -26,8 +26,8 @@ class Producte(models.Model):
 
 class Cistella(models.Model):
     usuari = models.ForeignKey(User, on_delete=models.CASCADE)
-    producte = models.ForeignKey(Producte, on_delete=models.CASCADE)
-    quantitat = models.IntegerField(default=1)
+    producte = models.ManyToManyField(Producte)
+    # quantitat = models.IntegerField(default=1)
 
 class Compra(models.Model):
     usuari = models.ForeignKey(User, on_delete=models.CASCADE)
