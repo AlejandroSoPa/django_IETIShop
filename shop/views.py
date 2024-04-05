@@ -3,7 +3,7 @@ from .models import *
 
 def lista_productos(request):
     productos = Producte.objects.all()
-    
+
     if 'categoria' in request.GET:
         categoria_id = request.GET['categoria']
         if categoria_id:
@@ -18,6 +18,7 @@ def detalle_producto(request, producto_id):
 
 def filtrar_por_categoria(request):
     categoria_id = request.GET.get('categoria')
+    
     if categoria_id:
         productos = Producte.objects.filter(categoria=categoria_id)
     else:
