@@ -1,9 +1,12 @@
+from django.core.management.base import BaseCommand
 from faker import Faker
 from faker_music import MusicProvider
+from shop.models import Tag
+
 fake = Faker()
 fake.add_provider(MusicProvider)
 
-class Comando(BaseCommand):
+class Command(BaseCommand):
     help = 'Crea tags'
 
     def handle(self, *args, **kwargs):
